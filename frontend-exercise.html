@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Dashboard Components</title>
+    <link rel="stylesheet" href="frontend-styles.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Navigation Component -->
+        <nav class="nav-container">
+            <div class="nav-brand">Dashboard</div>
+            <div class="nav-menu">
+                <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+                <button id="notificationsToggle" aria-label="Toggle notifications">🔔</button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-container">
+            <!-- Card Grid -->
+            <section class="card-grid" id="cardGrid">
+                <!-- Cards will be dynamically added here -->
+            </section>
+
+            <!-- Interactive Chart Area -->
+            <section class="chart-container">
+                <div class="chart-controls">
+                    <select id="chartType">
+                        <option value="bar">Bar Chart</option>
+                        <option value="line">Line Chart</option>
+                        <option value="pie">Pie Chart</option>
+                    </select>
+                    <div class="chart-filters">
+                        <button class="filter-btn active" data-period="day">Day</button>
+                        <button class="filter-btn" data-period="week">Week</button>
+                        <button class="filter-btn" data-period="month">Month</button>
+                    </div>
+                </div>
+                <div id="chartArea" class="chart-area">
+                    <!-- Chart will be rendered here -->
+                </div>
+            </section>
+
+            <!-- Interactive Widget Area -->
+            <section class="widget-container">
+                <div class="widget" id="todoWidget">
+                    <h3>Quick Tasks</h3>
+                    <div class="todo-input-container">
+                        <input type="text" id="todoInput" placeholder="Add a new task">
+                        <button id="addTodo">+</button>
+                    </div>
+                    <ul id="todoList" class="todo-list">
+                        <!-- Todo items will be added here -->
+                    </ul>
+                </div>
+
+                <div class="widget" id="notificationsWidget">
+                    <h3>Notifications</h3>
+                    <div class="notifications-list" id="notificationsList">
+                        <!-- Notifications will be added here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modal Component -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose">&times;</button>
+                <div class="modal-body">
+                    <!-- Modal content will be dynamically added -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="frontend-script.js"></script>
+</body>
+</html>
